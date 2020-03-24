@@ -1,0 +1,16 @@
+<h1>Buscando: <small>{{ termino }}</small></h1>
+<hr>
+<div class="card-columns" *ngIf="results.length>0; else content">
+    <app-heroe-card [heroe]="heroe" [index]="heroe.id" *ngFor="let heroe of results;let i = index">
+    </app-heroe-card>
+</div>
+<ng-template #content>
+    <div class="row animated fadeIn fast">
+        <div class="col-md-12">
+            <div class="alert alert-info" role="alert">
+                No se encontró resultados con el término {{termino}}.
+            </div>
+
+        </div>
+    </div>
+</ng-template>
